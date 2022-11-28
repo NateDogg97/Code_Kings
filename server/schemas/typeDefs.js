@@ -11,8 +11,12 @@ const typeDefs = gql`
     }
 
     type Project {
+        _id: ID
+        name: String
+        description: String
 
     }
 `;
+//need to add  isFinished: Boolean   to Project
 
 module.exports = typeDefs;
