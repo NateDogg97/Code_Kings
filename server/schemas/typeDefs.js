@@ -16,7 +16,18 @@ const typeDefs = gql`
         description: String
 
     }
+
+    type Auth {
+        token: ID
+        user: User
+    }
+
+    type Query {
+        user: User
+        orders: [Project]
+        order(id: ID!): Project
+    }
 `;
-//need to add  isFinished: Boolean   to Project
+//need to add  isFinished: Boolean   to Project?
 
 module.exports = typeDefs;
