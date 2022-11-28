@@ -29,5 +29,6 @@ const typeDefs = gql`
     }
 `;
 //need to add  isFinished: Boolean   to Project?
+//if we have a shopping cart, add checkout typedef
 
 module.exports = typeDefs;
