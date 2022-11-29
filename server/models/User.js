@@ -24,9 +24,19 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
-  myOpenProjects: [Project.schema],
-  developingProjects: [Project.schema]
-  
+  myOpenProjects: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Project'
+    }
+  ],
+
+  myClaimedProjects: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Project'
+    }
+  ]
 });
 
 // set up password creation
