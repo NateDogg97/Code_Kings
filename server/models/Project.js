@@ -10,6 +10,15 @@ const projectSchema = new Schema({
   description: {
     type: String
   },
+  inProgress: {
+    type: Boolean
+  },
+  owner: {
+
+  },
+  developer: {
+
+  },
 });
 
 const Project = mongoose.model('Project', projectSchema);

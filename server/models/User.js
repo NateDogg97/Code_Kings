@@ -24,7 +24,9 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
-  orders: [Project.schema]
+  myOpenProjects: [Project.schema],
+  developingProjects: [Project.schema]
+  
 });
 
 // set up password creation
