@@ -1,0 +1,25 @@
+.container-list {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding:  200px 200px 75px 50px;
+  }
+  
+  @media only screen and (max-width: 991px) {
+    .pricingBlock .ant-row > div:nth-child(2) .ant-list-item {
+      transform: scale(1.14);
+    }
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .pricingBlock .ant-row > div:nth-child(2) .ant-list-item {
+      transform: scale(1);
+    }
+  
+    .mobileVisible {
+      display: block;
+    }
+    
+    .mobileHidden {
+      display: none;
+    }
+  }
