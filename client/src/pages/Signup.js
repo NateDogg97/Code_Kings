@@ -36,7 +36,7 @@ const tailFormItemLayout = {
     },
   },
 };
-const App = () => {
+const Signup = () => {
   const [form] = Form.useForm();
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
@@ -142,4 +142,4 @@ const App = () => {
     </Form>
   );
 };
-export default App;
+export default Signup;
