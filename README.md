@@ -62,7 +62,7 @@
 
 ## About Our Project
 
-Description here
+Code Kings is a crowdsourcing company with a diverse community of designers, developers, and programmers. Every developer should have the opportunity to show off their talents and make money. Our mission is to allow individuals access to unlimited projects that people need finished.
 
 ### Built With
 
@@ -93,8 +93,7 @@ Description here
 
 ## Usage
 
-<!-- we can put screenshots, code examples and demos here -->
-Usage here
+Use Code Kings to pay developers to work on projects that need completion. Or be the developer to work on the project to get paid. It is a win-win situation.
 
 ## Contributors
 
