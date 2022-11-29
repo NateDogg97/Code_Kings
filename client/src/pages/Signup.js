@@ -1,15 +1,9 @@
 import React from 'react';
 import {
-  AutoComplete,
   Button,
-  Cascader,
   Checkbox,
-  Col,
   Form,
   Input,
-  InputNumber,
-  Row,
-  Select,
 } from 'antd';
 
 const formItemLayout = {
