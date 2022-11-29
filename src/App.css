@@ -1,38 +1,167 @@
-.App {
+/* 
+general 
+-------
+*/
+body {
+  
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.container-fluid {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 15px;
+}
+
+.container-list {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding:  200px 200px 75px 50px;
+}
+
+.container-avatar {
+  margin: 0 auto;
+  padding: 15px;
+  position: absolute;
+  right: 0px;
+}
+
+.ant-layout {
+  background: #fff !important;
+}
+
+.mainLayout .ant-layout-header {
+  background: #f8f8f8;
+  padding: 0;
+  height: auto;
+  line-height: 1.6;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.bgGray {
+  background: #fafafa;
+}
+
+/* 
+header
+------ 
+*/
+.ant-layout-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.header .logo {
+  font-size: 22px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.header .logo .fas {
+  color: gold;
+  margin: 0 5px 0 0;
+  font-size: 28px;
+}
+
+.header .logo a {
+  color: #333;
+}
+/* 
+footer
+------
+*/
+.ant-layout-footer {
+  background: #111 !important;
+  color: #fff !important;
+  padding: 60px 0 !important;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.footer .logo {
+  font-size: 22px;
+  text-transform: uppercase;
+  margin: 0 0 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.footer .fas {
+  color: gold;
+  font-size: 28px;
+  margin: 0 5px 0 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.footer .logo a {
+  color: #fff;
+}
+
+.footer .socials {
+  list-style: none;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0;
+  font-size: 24px;
 }
 
-.App-link {
-  color: #61dafb;
+.footer .socials li {
+  margin: 0 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.footer .socials a {
+  color: #fff;
+}
+
+.footer .socials a:hover {
+  color: gold;
+}
+
+.footer .goTop:hover {
+  opacity: 0.7;
+}
+
+.mobileVisible {
+  display: none;
+}
+
+.mobileHidden {
+  display: block;
+}
+
+/* 
+responsive
+----------
+*/
+@media only screen and (max-width: 991px) {
+  .pricingBlock .ant-row > div:nth-child(2) .ant-list-item {
+    transform: scale(1.14);
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media only screen and (max-width: 767px) {
+  .pricingBlock .ant-row > div:nth-child(2) .ant-list-item {
+    transform: scale(1);
+  }
+
+  .mobileVisible {
+    display: block;
+  }
+  
+  .mobileHidden {
+    display: none;
   }
 }

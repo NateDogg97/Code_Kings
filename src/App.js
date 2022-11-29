@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+
 import './App.css';
+import AppHeader from "./components/common/header";
+import AppList from "./components/home/projectList";
+import AvatarApp from "./components/home/avatar";
+import AppFooter from "./components/common/footer";
+import { Layout } from "antd";
+
+const { Header, Content, Footer } = Layout;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout className="mainLayout">
+      <Header>
+
+        <AppHeader />
+        <div className="container-avatar">
+          <AvatarApp />
+        </div>
+      </Header>
+
+      <Content>
+
+        <div className="container-list">
+          <AppList />
+        </div>
+
+      </Content>
+<Footer>
+  <AppFooter />
+</Footer>
+    </Layout>
   );
 }
 
