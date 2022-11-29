@@ -93,3 +93,5 @@ const resolvers = {
         //"developer" for project?
     }
 }
+
+module.exports = resolvers;
