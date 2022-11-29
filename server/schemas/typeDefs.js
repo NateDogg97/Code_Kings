@@ -27,6 +27,22 @@ const typeDefs = gql`
         orders: [Project]
         order(id: ID!): Project
     }
+
+    type Mutation {
+        addUser(
+            firstName: String!
+            lastName: String!
+            email: String!
+            password: String!
+        ): Auth
+        updateUser(
+            firstName: String
+            lastName: String
+            email: String
+            password: String
+        ): User
+        login(email: String!, password: String!): Auth
+    }
 `;
 //need to add  isFinished: Boolean   to Project?
 //if we have a shopping cart, add checkout typedef
