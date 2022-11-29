@@ -16,6 +16,14 @@ import Project from './pages/Project';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+
+import NewsFeed from "./components/home/NewsFeed";
+import ProfileIcon from "./components/home/ProfileIcon";
+
+import { Layout } from "antd";
+
+const { Content } = Layout;
+
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -42,10 +50,21 @@ const client = new ApolloClient({
 
 function App() {
   return (
+    <Layout className="mainLayout">
+
     <ApolloProvider client={client}>
       <Router>
-        <div className="">
           <Header />
+          <Content>
+
+          <div className='container-avatar'>
+            <ProfileIcon />
+          </div>
+
+          <div className='container-list'>
+              <NewsFeed />
+          </div>
+
           <div className="container">
             <Routes>
               <Route 
@@ -74,10 +93,13 @@ function App() {
               />
             </Routes>
           </div>
+
+
+          </Content>
           <Footer />
-        </div>
       </Router>
     </ApolloProvider>
+    </Layout>
   );
 }
 
