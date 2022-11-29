@@ -41,7 +41,10 @@ const typeDefs = gql`
             email: String
             password: String
         ): User
-        login(email: String!, password: String!): Auth
+        login(
+            email: String!
+            password: String!
+        ): Auth
     }
 `;
 //need to add  isFinished: Boolean   to Project?
