@@ -27,8 +27,8 @@ const typeDefs = gql`
 
     type Query {
         user: User
-        orders: [Project]
-        order(id: ID!): Project
+        projects: [Project]
+        project(id: ID!): Project
     }
 
     type Mutation {
@@ -50,5 +50,6 @@ const typeDefs = gql`
         ): Auth
     }
 `;
+//add mutations once resolvers are finished
 
 module.exports = typeDefs;
