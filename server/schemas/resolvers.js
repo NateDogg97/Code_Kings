@@ -55,5 +55,29 @@ const resolvers = {
       
         //     return { session: session.id };
         //   }
+    },
+
+
+
+
+
+
+
+
+
+
+
+    Mutation: {
+        addUser: async (parent, args) => {
+
+        },
+        updateUser: async (parent, args, context) => {
+
+        },
+        login: async (parent, {email, password}) => {
+
+        }
+        //Need mutations for update open/claimed projects for User and
+        //"developer" for project?
     }
 }
