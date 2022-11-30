@@ -24,14 +24,14 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
-  myOpenProjects: [
+  createdProjects: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Project'
     }
   ],
 
-  myClaimedProjects: [
+  developingProjects: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Project'
