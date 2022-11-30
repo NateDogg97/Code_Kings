@@ -16,7 +16,7 @@ const typeDefs = gql`
         description: String
         inProgress: Boolean
         owner: User
-        price: Number
+        price: Float
         developer: User
     }
 

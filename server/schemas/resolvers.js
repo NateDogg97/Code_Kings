@@ -3,7 +3,7 @@ const { User, Project } = require('../models');
 const { signToken } = require('../utils/auth');
 
 // COMPLETE AFTER SETTING UP STRIPE API
-const stripe = require('stripe')('');
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
     Query: {
@@ -21,8 +21,8 @@ const resolvers = {
           },
           project: async (parent, { _id }) => {
             return await Project.findById(_id)
-            .populate('developer')
-            .populate('owner');
+            // .populate('developer')
+            // .populate('owner');
           },
 
         //   STRIPE API QUERY
