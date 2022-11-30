@@ -8,15 +8,25 @@ const projectSchema = new Schema({
     trim: true
   },
   description: {
-    type: String
+    type: String,
+    required: true
   },
   open: {
-    type: Boolean
+    type: Boolean,
+    required: true
   },
   price: {
     type: Number,
     required: true,
     min: 0
+  },
+  owner: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  developer: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
   }
 });
 
