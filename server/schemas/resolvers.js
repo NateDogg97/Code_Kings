@@ -2,12 +2,12 @@ const { AuthenticationError } = require('apollo-server-express');
 const { User, Project } = require('../models');
 const { signToken } = require('../utils/auth');
 
-// COMPLETE AFTER SETTING UP STRIPE API
-const stripe = require('stripe')('');
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+
 
 const resolvers = {
     Query: {
-        user: async (parent, args, context) => {
+          user: async (parent, args, context) => {
             if (context.user) {
               const user = await User.findById(context.user._id)
               .populate('myOpenProjects')
@@ -21,8 +21,8 @@ const resolvers = {
           },
           project: async (parent, { _id }) => {
             return await Project.findById(_id)
-            .populate('developer')
-            .populate('owner');
+            // .populate('developer')
+            // .populate('owner');
           },
 
         //   STRIPE API QUERY
@@ -56,9 +56,9 @@ const resolvers = {
               cancel_url: `${url}/`
             });
       
-            return { session: session.id };
+          return { session: session.id };
           }
-    },
+      },
     Mutation: {
         addUser: async (parent, args) => {
             const user = await User.create(args);
