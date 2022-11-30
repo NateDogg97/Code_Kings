@@ -6,18 +6,16 @@ const typeDefs = gql`
         firstName: String
         lastName: String
         email: String
-        myOpenProjects: [Project]
-        myClaimedProjects: [Project]
+        createdProjects: [Project]
+        developingProjects: [Project]
     }
 
     type Project {
         _id: ID
         name: String
         description: String
-        inProgress: Boolean
-        owner: User
+        open: Boolean
         price: Number
-        developer: User
     }
 
     type Auth {
