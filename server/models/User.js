@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
-const Project = require('./Project');
 
 const userSchema = new Schema({
   firstName: {
@@ -24,14 +23,14 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
-  myOpenProjects: [
+  createdProjects: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Project'
     }
   ],
 
-  myClaimedProjects: [
+  developingProjects: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Project'

@@ -10,22 +10,13 @@ const projectSchema = new Schema({
   description: {
     type: String
   },
-  inProgress: {
+  open: {
     type: Boolean
-  },
-  owner: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
   },
   price: {
     type: Number,
     required: true,
     min: 0
-  },
-  developer: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',
-    default: null
   }
 });
 
