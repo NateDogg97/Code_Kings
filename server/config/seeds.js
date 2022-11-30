@@ -37,11 +37,7 @@ db.once('open', async () => {
       lastName: 'Potter',
       email: 'harry@test.com',
       password: 'harrypass1',
-      createdProjects: [
-        {
-          projects: [projects[0]._id]
-        }
-      ],
+      createdProjects: [projects[0]._id]
     });
   
     await User.create({
@@ -49,11 +45,7 @@ db.once('open', async () => {
         lastName: 'Weasley',
         email: 'ron@test.com',
         password: 'ronpass2',
-        createdProjects: [
-          {
-            projects: [projects[1]._id]
-          }
-        ]
+        createdProjects: [projects[1]._id]
       });
 
       await User.create({
@@ -61,16 +53,8 @@ db.once('open', async () => {
         lastName: 'Granger',
         email: 'hermoine@test.com',
         password: 'hermoinepass3',
-        createdProjects: [
-          {
-            projects: [projects[2]._id]
-          }
-        ],
-        developingProjects: [
-          {
-            projects: [projects[1]._id]
-          }
-        ]
+        createdProjects: [projects[2]._id],
+        developingProjects: [projects[1]._id]
       });
   
     console.log('users seeded');
