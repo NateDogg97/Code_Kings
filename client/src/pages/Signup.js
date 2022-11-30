@@ -50,6 +50,35 @@ const Signup = () => {
       onFinish={onFinish}
       scrollToFirstError
     >
+
+<Form.Item
+        name="firstName"
+        label="First Name"
+        rules={[
+          {
+            type: 'array',
+            required: true,
+            message: 'Please enter your first name!',
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item
+        name="lastName"
+        label="Last Name"
+        rules={[
+          {
+            type: 'array',
+            required: true,
+            message: 'Please enter your last name!',
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+
       <Form.Item
         name="email"
         label="E-mail"
