@@ -10,13 +10,17 @@ const typeDefs = gql`
         developingProjects: [Project]
     }
 
+    type Checkout {
+        session: ID
+      }
+
     type Project {
         _id: ID
         name: String
         description: String
-        owner: User
         open: Boolean
         price: Float
+        owner: User
         developer: User
 
     }
@@ -30,6 +34,7 @@ const typeDefs = gql`
         user: User
         projects: [Project]
         project(id: ID!): Project
+        checkout(project: [ID]!): Checkout
     }
 
     type Mutation {
