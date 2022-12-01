@@ -33,7 +33,7 @@ const App = () => {
           <Button className='claim-projCard' type="primary" loading={loadings[0]} onClick={() => enterLoading(0)}>
             Claim Project
           </Button>
-          <Button className='delete-projCard' type="primary" loading={loadings[0]} onClick={() => enterLoading(0)} danger>
+          <Button className='delete-projCard' type="primary" loading={loadings[1]} onClick={() => enterLoading(1)} danger>
             Delete Project
           </Button>
         </div>
