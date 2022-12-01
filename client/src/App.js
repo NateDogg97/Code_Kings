@@ -50,7 +50,7 @@ function App() {
           <div className="content">
             <Routes>
               <Route 
-                path="/"
+                path="/home"
                 element={<Home />}
               />
               <Route 
