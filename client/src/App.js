@@ -71,6 +71,10 @@ function App() {
                 path="/projects/:id"
                 element={<Project />}
               />
+              <Route 
+                path="/project"
+                element={<Project />}
+              />
             </Routes>
           </div>
           <Footer />
