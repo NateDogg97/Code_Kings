@@ -1,26 +1,29 @@
 import React from "react";
-import { Layout } from "antd";
+import { Layout, Button } from "antd";
 import NewsFeed from "../components/NewsFeed";
 import ProfileIcon from "../components/ProfileIcon";
 import ProjectCard from "../components/ProjectCard";
 
 
-const { Content } = Layout;
+const { Sider, Content } = Layout;
 
 
 function Home() {
   return(
     <Layout className="mainLayout">
-      <Content>
-      <div className="container-list">
+      <Sider>
+      <div className='icon-projPage'>
         <ProfileIcon />
-        <NewsFeed />
+        <Button className='create-new-proj' type="primary">
+          Create A Project
+        </Button>
       </div>
-      </Content>
+      </Sider>
       <Content>
-        <div className="container-list">
-          <ProjectCard />
-        </div>
+      <div className="container-list"> 
+        <NewsFeed />
+        <ProjectCard />
+      </div>
       </Content>
     </Layout>
   )
