@@ -10,6 +10,7 @@ const ProjectCard = () => (
     actions={[
       <ArrowRightOutlined  key="arrow"/>
     ]}
+    className="project-card"
   >
     <PushpinFilled style={{color:'red',fontSize:'24px'}} />
     <Meta
@@ -22,6 +23,7 @@ const ProjectCard = () => (
     actions={[
       <ArrowRightOutlined key="arrow"/>
     ]}
+    className="project-card"
   >
     <PushpinFilled style={{color:'red',fontSize:'24px'}}/>
     <Meta
@@ -34,6 +36,7 @@ const ProjectCard = () => (
     actions={[
       <ArrowRightOutlined key="arrow"/>
     ]}
+    className="project-card"
   >
     <PushpinFilled style={{color:'red',fontSize:'24px'}} />
     <Meta

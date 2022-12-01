@@ -1,8 +1,7 @@
-.ant-card{
+.project-card{
     width: 294px;
     height:175px;
-    margin:10px
-    
+    margin:10px   
 }
 .cards{
     display: flex;

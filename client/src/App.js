@@ -16,6 +16,8 @@ import Project from './pages/Project';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+import './index.css';
+
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -45,7 +47,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
           <Header />
-          <div className="container">
+          <div className="content">
             <Routes>
               <Route 
                 path="/"
