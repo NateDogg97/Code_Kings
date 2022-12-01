@@ -44,7 +44,7 @@ export const QUERY_ALL_PROJECTS = gql`
   }
 `;
 
-export const QUERY_USER = qgl`
+export const QUERY_USER = gql`
   {
     user {
       firstName
