@@ -16,7 +16,10 @@ import Project from './pages/Project';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+<<<<<<< HEAD
 import './index.css';
+=======
+>>>>>>> Develop
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
