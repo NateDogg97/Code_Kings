@@ -53,7 +53,7 @@ function App() {
             <Routes>
             {/* <ScrollToTop /> */}
               <Route 
-                path="/home"
+                path="/"
                 element={<Home />}
               />
               <Route 
