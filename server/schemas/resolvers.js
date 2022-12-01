@@ -33,7 +33,7 @@ const resolvers = {
       
             const product = await stripe.products.create({
             name: project.name,
-            description: projects.description,
+            description: project.description,
             });
     
             const price = await stripe.prices.create({

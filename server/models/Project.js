@@ -13,7 +13,7 @@ const projectSchema = new Schema({
   },
   open: {
     type: Boolean,
-    required: true
+    default: true
   },
   price: {
     type: Number,
@@ -24,7 +24,7 @@ const projectSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  developer: {
+  developers: {
     type: Schema.Types.ObjectId,
     ref: 'User'
   }
