@@ -16,12 +16,12 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 
-import NewsFeed from "./components/NewsFeed";
-import ProfileIcon from "./components/home/ProfileIcon";
+// import NewsFeed from "./components/NewsFeed";
+// import ProfileIcon from "./components/home/ProfileIcon";
 
-import { Layout } from "antd";
+// import { Layout } from "antd";
 
-const { Content } = Layout;
+// const { Content } = Layout;
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
