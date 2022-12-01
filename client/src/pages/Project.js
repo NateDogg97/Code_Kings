@@ -73,7 +73,6 @@ const App = () => {
           size="middle"
           style={{
             display: 'flex',
-            gap: '16px',
             width: '100%',
             padding: '16px',
           }}
