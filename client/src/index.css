@@ -29,7 +29,8 @@ body {
 }
 
 .price-projCard,
-.claim-projCard {
+.claim-projCard,
+.delete-projCard {
   margin: 16px;
   width: 100%;
 }

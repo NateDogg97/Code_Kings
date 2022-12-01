@@ -30,8 +30,11 @@ const App = () => {
           <Card className='price-projCard' title='Price' size='small'>
             <p></p>
           </Card>
-          <Button className='claim-projCard' type="primary" loading={loadings[0]} onClick={() => enterLoading(0)} danger>
+          <Button className='claim-projCard' type="primary" loading={loadings[0]} onClick={() => enterLoading(0)}>
             Claim Project
+          </Button>
+          <Button className='delete-projCard' type="primary" loading={loadings[0]} onClick={() => enterLoading(0)} danger>
+            Delete Project
           </Button>
         </div>
       </Sider>
