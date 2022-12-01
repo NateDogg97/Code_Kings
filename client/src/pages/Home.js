@@ -13,13 +13,9 @@ function Home() {
     <Layout className="mainLayout">
       <Content>
       <div className="container-list">
-          <ProfileIcon />
-        </div>
-      </Content>
-      <Content>
-        <div className="container-list">
-          <NewsFeed />
-        </div>
+        <ProfileIcon />
+        <NewsFeed />
+      </div>
       </Content>
       <Content>
         <div className="container-list">

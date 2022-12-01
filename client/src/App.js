@@ -12,9 +12,11 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
+import Project from './pages/Project';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+import './index.css';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -45,7 +47,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
           <Header />
-          <div className="container">
+          <div className="content">
             <Routes>
               <Route 
                 path="/"
@@ -66,6 +68,14 @@ function App() {
               <Route 
                 path="/profiles/:username"
                 element={<Profile />}
+              />
+              <Route 
+                path="/projects/:id"
+                element={<Project />}
+              />
+              <Route 
+                path="/project"
+                element={<Project />}
               />
             </Routes>
           </div>

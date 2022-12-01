@@ -1,0 +1,7 @@
+.container {
+    display: flex;
+}
+
+.navigation {
+    margin-left: auto;
+}
