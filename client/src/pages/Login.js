@@ -13,7 +13,7 @@ const Login = () => {
     console.log('Received values of form: ', values);
     try {
       const mutationResponse = await login({
-        variables: { email: formState.email, password: formState.password },
+        variables: { email: values.email, password: values.password },
       });
       const token = mutationResponse.data.login.token;
       Auth.login(token);
@@ -21,14 +21,6 @@ const Login = () => {
       console.log(e);
     }
   };
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  }
 
   return (
     <Form
@@ -38,7 +30,6 @@ const Login = () => {
         remember: true,
       }}
       onFinish={onFinish}
-      onChange={handleChange}
     >
       <Form.Item
         name="email"
