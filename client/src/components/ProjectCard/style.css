@@ -4,6 +4,7 @@
     margin:10px   
 }
 .cards{
+    margin: 100px;
     display: flex;
     flex-wrap: wrap;
 }

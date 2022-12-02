@@ -6,6 +6,7 @@
     border: 1px solid black;
   }
   .footer .col {
+    margin-bottom:0px;
     width: 300px;
     height: auto;
     float: left;
