@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../index.css";
 import ProfileIcon from "../components/ProfileIcon";
 import ProjectCard from "../components/ProjectCard";
-import Calendar from "../components/Calendar";
+// import Calendar from "../components/Calendar";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -62,57 +62,55 @@ const Profile = () => {
             minHeight: 280,
           }}
         >
-        <div class="wrapper">
-    <div id="content">
-      <div class="section">
-        < ProfileIcon/>
-      </div>
-      <div class="break">
-        <div class="section half">
-          <h2>Owner</h2>
-          <hr style="border: 1px solid grey" />
-          <div class="break">
-            <h4>My Open Projects</h4>
-          </div>
-          <div class="break">
-            <h4>Pending Projects</h4>
+        <div className="wrapper">
+          <div className="content-profile">
+            <div className="section">
+              <ProfileIcon/>
+            </div>
+            <div className="break">
+              <div className="section half">
+                <h2>Owner</h2>
+                <hr style={{border: "1px solid grey"}} />
+                <div className="break">
+                  <h4>My Open Projects</h4>
+                </div>
+                <div className="break">
+                  <h4>Pending Projects</h4>
+                </div>
+              </div>
+              <div className="section half">
+                <h2>Developer</h2>
+                <hr style={{border: "1px solid grey"}} />
+                <div className="break">
+                  <h4>Working On</h4>
+                </div>
+                <div className="break">
+                  <h4>Completed Projects</h4>
+                </div>
+              </div>
+            </div>
+            <div className="content">
+              <div className="break">
+                <div className="section half">
+                  <h2>Recommended Projects</h2>
+                  <hr style={{border: "1px solid grey"}} />
+                  <div className="break">
+                    <ProjectCard />
+                  </div>
+                  <div className="break"></div>
+                </div>
+                <div className="section half">
+                  <h2>Calendar</h2>
+                  <hr style={{border: "1px solid grey"}} />
+                  <div className="break">
+                    {/* <Calendar /> */}
+                  </div>
+                  <div className="break"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="section half">
-          <h2>Developer</h2>
-          <hr style="border: 1px solid grey" />
-          <div class="break">
-            <h4>Working On</h4>
-          </div>
-          <div class="break">
-            <h4>Completed Projects</h4>
-          </div>
-        </div>
-      </div>
-      <div class="content">
-        <div class="break">
-          <div class="section half">
-            <h2>Recommended Projects</h2>
-            <hr style="border: 1px solid grey" />
-            <div class="break">
-              <ProjectCard />
-            </div>
-            <div class="break">
-            </div>
-          </div>
-          <div class="section half">
-            <h2>Calendar</h2>
-            <hr style="border: 1px solid grey" />
-            <div class="break">
-              <Calendar />
-            </div>
-            <div class="break">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
         </Content>
       </Layout>
     </Layout>
