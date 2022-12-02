@@ -18,7 +18,7 @@ const NewProject = () => {
     <Form {...layout} name="nest-messages" onFinish={onFinish}>
       
       <Form.Item
-        name={['user', 'title']}
+        name={['project', 'name']}
         label="Project Title"
         rules={[
           {
@@ -26,10 +26,15 @@ const NewProject = () => {
           },
         ]}
       >
-        <Input size="large" placeholder='Project Title'/>
+        <Input size="large" placeholder='Enter title here'/>
       </Form.Item>
+      
+      <Form.Item name={['project', 'description']} label="Project Description">
+        <Input.TextArea />
+      </Form.Item>
+
       <Form.Item
-        name={['user', 'price']}
+        name={['project', 'price']}
         label="Bounty"
         rules={[
           {
@@ -40,10 +45,7 @@ const NewProject = () => {
       >
         <InputNumber prefix='$' />
       </Form.Item>
-      
-      <Form.Item name={['user', 'description']} label="Project Description">
-        <Input.TextArea />
-      </Form.Item>
+
       <Form.Item
         wrapperCol={{
           ...layout.wrapperCol,
