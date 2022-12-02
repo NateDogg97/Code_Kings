@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useMutation } from '@apollo/client';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Form, Input } from 'antd';
@@ -6,7 +6,6 @@ import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const Login = () => {
-  const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error }] = useMutation(LOGIN);
 
   const onFinish = async (values) => {
