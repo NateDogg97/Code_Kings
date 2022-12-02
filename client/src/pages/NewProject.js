@@ -15,7 +15,7 @@ const NewProject = () => {
     console.log(values);
   };
   return (
-    <Form {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
+    <Form {...layout} name="nest-messages" onFinish={onFinish}>
       
       <Form.Item
         name={['user', 'title']}
