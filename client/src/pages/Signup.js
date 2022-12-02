@@ -93,7 +93,7 @@ const Signup = () => {
                     },
                 ]}
             >
-                <Input onChange={handleChange} />
+                <Input onChange={handleChange} style={{ width: '70%' }}/>
             </Form.Item>
 
             <Form.Item
@@ -107,7 +107,7 @@ const Signup = () => {
                     },
                 ]}
             >
-                <Input onChange={handleChange} />
+                <Input onChange={handleChange} style={{ width: '70%' }}/>
             </Form.Item>
 
             <Form.Item
@@ -124,7 +124,7 @@ const Signup = () => {
                     },
                 ]}
             >
-                <Input onChange={handleChange} />
+                <Input onChange={handleChange} style={{ width: '70%' }}/>
             </Form.Item>
 
             <Form.Item
@@ -138,7 +138,7 @@ const Signup = () => {
                 ]}
                 hasFeedback
             >
-                <Input.Password onChange={handleChange} />
+                <Input.Password onChange={handleChange} style={{ width: '70%' }}/>
             </Form.Item>
 
             <Form.Item
@@ -161,7 +161,7 @@ const Signup = () => {
                     }),
                 ]}
             >
-                <Input.Password onChange={handleChange} />
+                <Input.Password onChange={handleChange} style={{ width: '70%' }}/>
             </Form.Item>
 
             {/* <Form.Item
