@@ -16,23 +16,13 @@ const NewProject = () => {
   };
   return (
     <Form {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
+      
       <Form.Item
-        name={['user', 'name']}
-        label="Name"
+        name={['user', 'title']}
+        label="Project Title"
         rules={[
           {
-            required: true,
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
-      <Form.Item
-        name={['user', 'email']}
-        label="Email"
-        rules={[
-          {
-            type: 'email',
+            type: 'array',
           },
         ]}
       >
@@ -51,10 +41,8 @@ const NewProject = () => {
       >
         <InputNumber />
       </Form.Item>
-      <Form.Item name={['user', 'website']} label="Website">
-        <Input />
-      </Form.Item>
-      <Form.Item name={['user', 'introduction']} label="Introduction">
+      
+      <Form.Item name={['user', 'description']} label="Project Description">
         <Input.TextArea />
       </Form.Item>
       <Form.Item
