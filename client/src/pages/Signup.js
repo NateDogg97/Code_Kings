@@ -39,45 +39,45 @@ const tailFormItemLayout = {
         },
     },
 };
-// const Signup = () => {
-//   const [form] = Form.useForm();
-//   const onFinish = (values) => {
-//     console.log('Received values of form: ', values);
-//   };
-
 const Signup = () => {
-    const [form] = Form.useForm();
-    const [formState, setFormState] = useState({ email: '', password: '' });
+  const [form] = Form.useForm();
+  const onSubmit = async (values) => {
+    console.log('Received values of form: ', values);
+  };
+
+// const Signup = () => {
+//     const [form] = Form.useForm();
+//     const [formState, setFormState] = useState({ email: '', password: '' });
     // const [addUser] = useMutation(ADD_USER);
 
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
-        //   const mutationResponse = await addUser({
-        //     variables: {
-        //       email: formState.email,
-        //       password: formState.password,
-        //       firstName: formState.firstName,
-        //       lastName: formState.lastName,
-        //     },
-        //   });
-        //   const token = mutationResponse.data.addUser.token;
-        //   Auth.login(token);
-    };
+    // const handleFormSubmit = async (event) => {
+    //     event.preventDefault();
+    //     //   const mutationResponse = await addUser({
+    //     //     variables: {
+    //     //       email: formState.email,
+    //     //       password: formState.password,
+    //     //       firstName: formState.firstName,
+    //     //       lastName: formState.lastName,
+    //     //     },
+    //     //   });
+    //     //   const token = mutationResponse.data.addUser.token;
+    //     //   Auth.login(token);
+    // };
 
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setFormState({
-            ...formState,
-            [name]: value,
-        });
-    };
+    // const handleChange = (event) => {
+    //     const { name, value } = event.target;
+    //     setFormState({
+    //         ...formState,
+    //         [name]: value,
+    //     });
+    // };
 
     return (
         <Form
             {...formItemLayout}
             form={form}
             name="register"
-            onSubmit={handleFormSubmit}
+            onSubmit={onSubmit}
             scrollToFirstError
         >
 
@@ -92,7 +92,7 @@ const Signup = () => {
                     },
                 ]}
             >
-                <Input onChange={handleChange} style={{ width: '70%' }}/>
+                <Input style={{ width: '70%' }}/>
             </Form.Item>
 
             <Form.Item
@@ -106,7 +106,7 @@ const Signup = () => {
                     },
                 ]}
             >
-                <Input onChange={handleChange} style={{ width: '70%' }}/>
+                <Input style={{ width: '70%' }}/>
             </Form.Item>
 
             <Form.Item
@@ -123,7 +123,7 @@ const Signup = () => {
                     },
                 ]}
             >
-                <Input onChange={handleChange} style={{ width: '70%' }}/>
+                <Input style={{ width: '70%' }}/>
             </Form.Item>
 
             <Form.Item
@@ -137,7 +137,7 @@ const Signup = () => {
                 ]}
                 hasFeedback
             >
-                <Input.Password onChange={handleChange} style={{ width: '70%' }}/>
+                <Input.Password style={{ width: '70%' }}/>
             </Form.Item>
 
             <Form.Item
@@ -160,11 +160,11 @@ const Signup = () => {
                     }),
                 ]}
             >
-                <Input.Password onChange={handleChange} style={{ width: '70%' }}/>
+                <Input.Password style={{ width: '70%' }}/>
             </Form.Item>
 
             <Form.Item {...tailFormItemLayout}>
-                <Button type="submit" htmlType="submit">
+                <Button type="primary" htmlType="submit" className='login-form-button'>
                     Register
                 </Button>
             </Form.Item>
