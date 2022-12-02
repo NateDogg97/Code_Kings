@@ -5,7 +5,6 @@ import React, { useState } from 'react';
 // import { addUser } from '../../../server/schemas/resolvers';
 import {
     Button,
-    // Checkbox,
     Form,
     Input,
 } from 'antd';
@@ -164,21 +163,6 @@ const Signup = () => {
                 <Input.Password onChange={handleChange} style={{ width: '70%' }}/>
             </Form.Item>
 
-            {/* <Form.Item
-                name="agreement"
-                valuePropName="checked"
-                rules={[
-                    {
-                        validator: (_, value) =>
-                            value ? Promise.resolve() : Promise.reject(new Error('Should accept agreement')),
-                    },
-                ]}
-                {...tailFormItemLayout}
-            >
-                <Checkbox>
-          I have read the <a href="">agreement</a>
-        </Checkbox>
-            </Form.Item> */}
             <Form.Item {...tailFormItemLayout}>
                 <Button type="submit" htmlType="submit">
                     Register
