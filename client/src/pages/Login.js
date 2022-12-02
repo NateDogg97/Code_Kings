@@ -22,6 +22,14 @@ const Login = () => {
     }
   };
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  }
+
   return (
     <Form
       name="normal_login"
@@ -30,6 +38,7 @@ const Login = () => {
         remember: true,
       }}
       onFinish={onFinish}
+      onChange={handleChange}
     >
       <Form.Item
         name="email"
