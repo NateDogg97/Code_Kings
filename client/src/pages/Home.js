@@ -7,8 +7,8 @@ import ProjectCard from "../components/ProjectCard";
 
 const { Sider, Content } = Layout;
 
-
 function Home() {
+
   return(
     <Layout className="mainLayout">
       <Sider>

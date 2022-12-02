@@ -62,51 +62,51 @@ const Profile = () => {
             minHeight: 280,
           }}
         >
-        <div class="wrapper">
+        <div className="wrapper">
     <div id="content">
-      <div class="section">
+      <div className="section">
         < ProfileIcon/>
       </div>
-      <div class="break">
-        <div class="section half">
+      <div className="break">
+        <div className="section half">
           <h2>Owner</h2>
           <hr style="border: 1px solid grey" />
-          <div class="break">
+          <div className="break">
             <h4>My Open Projects</h4>
           </div>
-          <div class="break">
+          <div className="break">
             <h4>Pending Projects</h4>
           </div>
         </div>
-        <div class="section half">
+        <div className="section half">
           <h2>Developer</h2>
           <hr style="border: 1px solid grey" />
-          <div class="break">
+          <div className="break">
             <h4>Working On</h4>
           </div>
-          <div class="break">
+          <div className="break">
             <h4>Completed Projects</h4>
           </div>
         </div>
       </div>
-      <div class="content">
-        <div class="break">
-          <div class="section half">
+      <div className="content">
+        <div className="break">
+          <div className="section half">
             <h2>Recommended Projects</h2>
             <hr style="border: 1px solid grey" />
-            <div class="break">
+            <div className="break">
               <ProjectCard />
             </div>
-            <div class="break">
+            <div className="break">
             </div>
           </div>
-          <div class="section half">
+          <div className="section half">
             <h2>Calendar</h2>
             <hr style="border: 1px solid grey" />
-            <div class="break">
+            <div className="break">
               <Calendar />
             </div>
-            <div class="break">
+            <div className="break">
             </div>
           </div>
         </div>
