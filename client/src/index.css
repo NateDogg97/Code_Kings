@@ -1,4 +1,4 @@
-.content {
+.content-profile {
   width: 100%;
 }
 
@@ -79,22 +79,22 @@ body {
   margin-left: -10px;
   align-items: stretch;
 }
-#content {
+.content-profile {
   width: 100%;
   padding: 20px;
   min-height: 100vh;
 }
-#content h1 {
+.content-profile h1 {
   text-align: left;
   margin: 1rem;
 }
-#content .section {
+.content-profile .section {
   border: 1px solid grey;
   padding: 32px;
   margin-left: 1rem;
   margin-bottom: 2rem;
 }
-#content .break {
+.content-profile .break {
   display: flex;
 }
 .section {
