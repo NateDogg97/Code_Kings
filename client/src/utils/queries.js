@@ -1,80 +1,50 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_PROJECTS = gql`
-  query getProjects($owner: ID) {
-    projects(owner: $owner) {
-      _id
-      name
-      description
-      open
-      price
-      owner {
-        _id
-        firstName
-        lastName
-      }
-      developers {
-        _id
-        firstName
-        lastName
-      }
-    }
+query getProjects {
+  projects {
+    _id
+    name
+    description
+    open
+    price
   }
+}
 `;
 
-export const QUERY_ALL_PROJECTS = gql`
-  {
-    projects {
-      _id
-      name
-      description
-      open
-      price
-      owner {
-        _id
-        firstName
-        lastName
-      }
-      developers {
-        _id
-        firstName
-        lastName
-      }
-    }
+export const QUERY_PROJECT = gql`
+query getProject($id: ID!) {
+  project(_id: $id) {
+    _id
+    name
+    description
+    open
+    price
   }
+}
 `;
 
 export const QUERY_USER = gql`
-  {
-    user {
-      firstName
-      lastName
-      email
-      createdProjects {
-        _id
-        name
-        description
-        open
-        price
-        developers {
-          _id
-          firstName
-          lastName
-          email
-        } 
-      developingProjects {
-        _id
-        name
-        description
-        open
-        price
-        developers {
-          _id
-          firstName
-          lastName
-          email
-        }
-      }
+query getUser {
+  user {
+    _id
+    firstName
+    lastName
+    email
+    createdProjects {
+      _id
+      name
+      description
+      open
+      price
+    }
+    developingProjects {
+      _id
+      name
+      description
+      open
+      price
     }
   }
+}
 `;
