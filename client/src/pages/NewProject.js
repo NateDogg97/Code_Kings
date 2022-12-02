@@ -26,20 +26,19 @@ const NewProject = () => {
           },
         ]}
       >
-        <Input />
+        <Input size="large" placeholder='Project Title'/>
       </Form.Item>
       <Form.Item
-        name={['user', 'age']}
-        label="Age"
+        name={['user', 'price']}
+        label="Bounty"
         rules={[
           {
             type: 'number',
-            min: 0,
-            max: 99,
+            min: 1,
           },
         ]}
       >
-        <InputNumber />
+        <InputNumber prefix='$' />
       </Form.Item>
       
       <Form.Item name={['user', 'description']} label="Project Description">
