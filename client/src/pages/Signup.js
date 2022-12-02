@@ -5,7 +5,6 @@ import React, { useState } from 'react';
 // import { addUser } from '../../../server/schemas/resolvers';
 import {
     Button,
-    // Checkbox,
     Form,
     Input,
 } from 'antd';
@@ -40,45 +39,45 @@ const tailFormItemLayout = {
         },
     },
 };
-// const Signup = () => {
-//   const [form] = Form.useForm();
-//   const onFinish = (values) => {
-//     console.log('Received values of form: ', values);
-//   };
-
 const Signup = () => {
-    const [form] = Form.useForm();
-    const [formState, setFormState] = useState({ email: '', password: '' });
+  const [form] = Form.useForm();
+  const onSubmit = async (values) => {
+    console.log('Received values of form: ', values);
+  };
+
+// const Signup = () => {
+//     const [form] = Form.useForm();
+//     const [formState, setFormState] = useState({ email: '', password: '' });
     // const [addUser] = useMutation(ADD_USER);
 
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
-        //   const mutationResponse = await addUser({
-        //     variables: {
-        //       email: formState.email,
-        //       password: formState.password,
-        //       firstName: formState.firstName,
-        //       lastName: formState.lastName,
-        //     },
-        //   });
-        //   const token = mutationResponse.data.addUser.token;
-        //   Auth.login(token);
-    };
+    // const handleFormSubmit = async (event) => {
+    //     event.preventDefault();
+    //     //   const mutationResponse = await addUser({
+    //     //     variables: {
+    //     //       email: formState.email,
+    //     //       password: formState.password,
+    //     //       firstName: formState.firstName,
+    //     //       lastName: formState.lastName,
+    //     //     },
+    //     //   });
+    //     //   const token = mutationResponse.data.addUser.token;
+    //     //   Auth.login(token);
+    // };
 
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setFormState({
-            ...formState,
-            [name]: value,
-        });
-    };
+    // const handleChange = (event) => {
+    //     const { name, value } = event.target;
+    //     setFormState({
+    //         ...formState,
+    //         [name]: value,
+    //     });
+    // };
 
     return (
         <Form
             {...formItemLayout}
             form={form}
             name="register"
-            onSubmit={handleFormSubmit}
+            onSubmit={onSubmit}
             scrollToFirstError
         >
 
@@ -93,7 +92,7 @@ const Signup = () => {
                     },
                 ]}
             >
-                <Input onChange={handleChange} />
+                <Input style={{ width: '70%' }}/>
             </Form.Item>
 
             <Form.Item
@@ -107,7 +106,7 @@ const Signup = () => {
                     },
                 ]}
             >
-                <Input onChange={handleChange} />
+                <Input style={{ width: '70%' }}/>
             </Form.Item>
 
             <Form.Item
@@ -124,7 +123,7 @@ const Signup = () => {
                     },
                 ]}
             >
-                <Input onChange={handleChange} />
+                <Input style={{ width: '70%' }}/>
             </Form.Item>
 
             <Form.Item
@@ -138,7 +137,7 @@ const Signup = () => {
                 ]}
                 hasFeedback
             >
-                <Input.Password onChange={handleChange} />
+                <Input.Password style={{ width: '70%' }}/>
             </Form.Item>
 
             <Form.Item
@@ -161,26 +160,11 @@ const Signup = () => {
                     }),
                 ]}
             >
-                <Input.Password onChange={handleChange} />
+                <Input.Password style={{ width: '70%' }}/>
             </Form.Item>
 
-            {/* <Form.Item
-                name="agreement"
-                valuePropName="checked"
-                rules={[
-                    {
-                        validator: (_, value) =>
-                            value ? Promise.resolve() : Promise.reject(new Error('Should accept agreement')),
-                    },
-                ]}
-                {...tailFormItemLayout}
-            >
-                <Checkbox>
-          I have read the <a href="">agreement</a>
-        </Checkbox>
-            </Form.Item> */}
             <Form.Item {...tailFormItemLayout}>
-                <Button type="submit" htmlType="submit">
+                <Button type="primary" htmlType="submit" className='login-form-button'>
                     Register
                 </Button>
             </Form.Item>
