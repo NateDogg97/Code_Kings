@@ -1,4 +1,3 @@
-import React from 'react';
 import { useMutation } from '@apollo/client';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Form, Input } from 'antd';
