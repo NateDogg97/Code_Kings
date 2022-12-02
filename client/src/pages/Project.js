@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
-// import { QUERY_PROJECTS } from '../utils/queries';
+import { useParams } from 'react-router-dom';
+import { QUERY_PROJECTS } from '../utils/queries';
 import { UploadOutlined } from '@ant-design/icons';
 import { Card, Space, Layout, Button, Empty, message, Upload} from 'antd';
 import Icon from '../components/ProfileIcon';
@@ -9,7 +10,6 @@ const { Sider, Content } = Layout;
 
 const props = {
   name: 'file',
-  // I'm not sure what this action is but this is mostly for aesthetics anyway
   action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
   headers: {
     authorization: 'authorization-text',
@@ -28,13 +28,6 @@ const props = {
 
 const App = () => {
 
-  // const { data } = useQuery(QUERY_PROJECTS);
-  // let project;
-
-  // if (data) {
-  //   project = data.project;
-  // }
-
   const [loadings, setLoadings] = useState([]);
   const enterLoading = (index) => {
     setLoadings((prevLoadings) => {
@@ -51,13 +44,28 @@ const App = () => {
     }, 6000);
   };
 
+  const { _id: userParam } = useParams();
+  const { loading, data } = useQuery(QUERY_PROJECTS, {
+    variables: { _id: userParam }
+  });
+
+  let project;
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (data) {
+    project = data.projects;
+  }
+
   return (
     <Layout>
       <Sider>
         <div className='icon-projPage'>
           <Icon/>
           <Card className='price-projCard' title='Price' size='small'>
-            {/* <p>{project.price}</p> */}
+            <p>{project.price}</p>
           </Card>
           <Button className='claim-projCard' type="primary" loading={loadings[0]} onClick={() => enterLoading(0)}>
             Claim Project
@@ -79,23 +87,23 @@ const App = () => {
           >
           <div className='row-1'>
             <Card title="Card" className='title-projCard'>
-              {/* <p>{project.title}</p> */}
+              <p>{project.title}</p>
             </Card>
           </div>
           <div className='row-2'>
             <Card title="Owner" className='owner-projCard'>
-              {/* <p>{project.owner}</p> */}
+              <p>{project.owner}</p>
             </Card>
             <Card title="Developers" className='developers-projCard'>
-              {/* {project.map((developer) => {
+              {project.map((developer) => {
                 <p>{developer.firstName} {developer.lastName}</p>
-              })} */}
+              })}
               
             </Card>
           </div>
           <div className='row-3'>
             <Card title="Description" className='description-projCard'>
-              {/* <p>{project.description}</p> */}
+              <p>{project.description}</p>
             </Card>
           </div>
           <div className='row-4'>

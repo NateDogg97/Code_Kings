@@ -21,7 +21,7 @@ const typeDefs = gql`
         open: Boolean
         price: Float
         owner: User
-        developer: User
+        developers: User
 
     }
 
