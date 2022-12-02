@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_PROJECTS = gql`
-  query getProjects($owner: ID) {
-    projects(owner: $owner) {
+  query getProjects($id: ID!) {
+    project(_id: $id) {
       _id
       name
       description
@@ -13,7 +13,7 @@ export const QUERY_PROJECTS = gql`
         firstName
         lastName
       }
-      developers {
+      developer {
         _id
         firstName
         lastName
@@ -68,7 +68,7 @@ export const QUERY_USER = gql`
         description
         open
         price
-        developers {
+        owner {
           _id
           firstName
           lastName
