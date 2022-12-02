@@ -1,57 +1,25 @@
-import "./style.css";
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRightOutlined,PushpinFilled } from '@ant-design/icons';
-import { Avatar, Card } from 'antd';
-const { Meta } = Card;
-const ProjectCard = () => (
-  <div className="cards">
-  <Card
-    hoverable="true"
-    actions={[
-      <ArrowRightOutlined  key="arrow"/>
-    ]}
-    className="project-card"
-  >
-    <PushpinFilled style={{color:'red',fontSize:'24px'}} />
-    <Meta
-      title={<Link to="/project">
-              Project 1
-            </Link>}
-      description="$200 Bounty"
-    />
-  </Card>
-  <Card
-    hoverable="true"
-    actions={[
-      <ArrowRightOutlined key="arrow"/>
-    ]}
-    className="project-card"
-  >
-    <PushpinFilled style={{color:'red',fontSize:'24px'}}/>
-    <Meta
-      title={<Link to="/project">
-              Project 2
-            </Link>}
-      description="$50 Bounty"
-    />
-  </Card>  
-  <Card
-    hoverable="true"
-    actions={[
-      <ArrowRightOutlined key="arrow"/>
-    ]}
-    className="project-card"
-  >
-    <PushpinFilled style={{color:'red',fontSize:'24px'}} />
-    <Meta
-      title={<Link to="/project">
-              Project 3
-            </Link>}
-      description="$100 Bounty"
-    />
-  </Card>
+
+import { useQuery } from '@apollo/client';
+
+import CardList from '../CardList';
+
+import { QUERY_PROJECTS } from "../../utils/queries";
+
+const ProjectCard = () => {
+  const { loading, data } = useQuery(QUERY_PROJECTS);
+  const projects = data?.projects || [];
+
+return(
+  <div className = "renderedCard">
+    {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <CardList
+            projects={projects}
+          />
+        )}
   </div>
-  
-);
+)
+  };
 export default ProjectCard;
