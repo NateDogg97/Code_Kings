@@ -1,11 +1,122 @@
-import React from "react";
+import React, { useState } from "react";
+import "../index.css";
+import ProfileIcon from "../components/ProfileIcon";
+import ProjectCard from "../components/ProjectCard";
+import Calendar from "../components/Calendar";
+import {
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+  ProjectOutlined,
+  HomeOutlined,
+  CalendarOutlined,
+} from "@ant-design/icons";
+import { Layout, Menu } from "antd";
 
-function Profile(){
-  return(
-    <div>
-        
+const { Header, Sider, Content } = Layout;
+
+const Profile = () => {
+  const [collapsed, setCollapsed] = useState(false);
+
+  return (
+    <Layout>
+      <Sider trigger={null} collapsible collapsed={collapsed}>
+        <div className="logo" />
+        <Menu
+          theme="dark"
+          mode="inline"
+          defaultSelectedKeys={["1"]}
+          items={[
+            {
+              key: "1",
+              icon: <ProjectOutlined />,
+              label: "Create A Project",
+            },
+            {
+              key: "2",
+              icon: <HomeOutlined />,
+              label: "Home",
+            },
+            {
+              key: "3",
+              icon: <CalendarOutlined />,
+              label: "Calendar",
+            },
+          ]}
+        />
+      </Sider>
+      <Layout className="site-layout">
+        <Header className="site-layout-background" style={{ padding: 0 }}>
+          {React.createElement(
+            collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
+            {
+              className: "trigger",
+              onClick: () => setCollapsed(!collapsed),
+            }
+          )}
+        </Header>
+        <Content
+          className="site-layout-background"
+          style={{
+            margin: "24px 16px",
+            padding: 24,
+            minHeight: 280,
+          }}
+        >
+        <div class="wrapper">
+    <div id="content">
+      <div class="section">
+        < ProfileIcon/>
+      </div>
+      <div class="break">
+        <div class="section half">
+          <h2>Owner</h2>
+          <hr style="border: 1px solid grey" />
+          <div class="break">
+            <h4>My Open Projects</h4>
+          </div>
+          <div class="break">
+            <h4>Pending Projects</h4>
+          </div>
+        </div>
+        <div class="section half">
+          <h2>Developer</h2>
+          <hr style="border: 1px solid grey" />
+          <div class="break">
+            <h4>Working On</h4>
+          </div>
+          <div class="break">
+            <h4>Completed Projects</h4>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="break">
+          <div class="section half">
+            <h2>Recommended Projects</h2>
+            <hr style="border: 1px solid grey" />
+            <div class="break">
+              <ProjectCard />
+            </div>
+            <div class="break">
+            </div>
+          </div>
+          <div class="section half">
+            <h2>Calendar</h2>
+            <hr style="border: 1px solid grey" />
+            <div class="break">
+              <Calendar />
+            </div>
+            <div class="break">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  )
-}
+  </div>
+        </Content>
+      </Layout>
+    </Layout>
+  );
+};
 
-export default Profile
+export default Profile;

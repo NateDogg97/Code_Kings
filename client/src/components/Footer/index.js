@@ -5,9 +5,9 @@ import "./style.css";
 function Footer() {
   return(
     <div>
-    <div class="footer">
-      <div class="contain">
-        <div class="col">
+    <div className="footer">
+      <div className="contain">
+        <div className="col">
           <h1>Use With Confidences</h1>
           <ul>          <li>
             Use Code Kings to pay developers to work on projects that need
@@ -16,7 +16,7 @@ function Footer() {
           </li>
         </ul>
         </div>
-        <div class="col">
+        <div className="col">
           <h1>Our Company</h1>
           <ul>
             <li>About Us</li>
@@ -26,7 +26,7 @@ function Footer() {
             <li>Services</li>
           </ul>
         </div>
-        <div class="col">
+        <div className="col">
           <h1>Support</h1>
           <ul>
             <li>Contact us</li>
@@ -35,7 +35,7 @@ function Footer() {
             <li>Gift Cards</li>
           </ul>
         </div>
-        <div class="col">
+        <div className="col">
           <h1>Resources</h1>
           <ul>
             <li>Blog</li>
@@ -44,10 +44,10 @@ function Footer() {
             <li>eBooks</li>
           </ul>
         </div>
-        <div class="clearfix"></div>
+        <div className="clearfix"></div>
       </div>
     </div>
-    <footer class="foot">
+    <footer className="foot">
       <p>Copyright © 2022 Code Kings - All rights Reserved</p>
     </footer>
     </div>

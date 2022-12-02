@@ -19,10 +19,10 @@ const resolvers = {
           projects: async () => {
             return await Project.find();
           },
-          project: async (parent, { _id }) => {
-            return await Project.findById(_id)
-            // .populate('developer')
-            // .populate('owner');
+          project: async (parent, args) => {
+            return await Project.findOne({id:args._id})
+             .populate('developers')
+             .populate('owner');
           },
 
         //   STRIPE API QUERY
@@ -33,7 +33,7 @@ const resolvers = {
       
             const product = await stripe.products.create({
             name: project.name,
-            description: projects.description,
+            description: project.description,
             });
     
             const price = await stripe.prices.create({

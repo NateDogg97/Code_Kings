@@ -13,9 +13,13 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import NewProject from './pages/NewProject';
 import Profile from './pages/Profile';
+import Project from './pages/Project';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+// import ScrollToTop from './utils/ScrollToTop';
+
+import './index.css';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -46,8 +50,9 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
           <Header />
-          <div className="container">
+          <div className="content">
             <Routes>
+            {/* <ScrollToTop /> */}
               <Route 
                 path="/"
                 element={<Home />}
@@ -71,6 +76,14 @@ function App() {
               <Route 
                 path="/newproject"
                 element={<NewProject />}
+                />
+              <Route 
+                path="/projects/:id"
+                element={<Project />}
+              />
+              <Route 
+                path="/project"
+                element={<Project />}
               />
             </Routes>
           </div>
