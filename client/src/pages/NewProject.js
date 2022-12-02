@@ -35,7 +35,7 @@ const NewProject = () => {
 
       <Form.Item
         name={['project', 'price']}
-        label="Bounty"
+        label="Set your bounty"
         rules={[
           {
             type: 'number',
@@ -53,7 +53,7 @@ const NewProject = () => {
         }}
       >
         <Button type="primary" htmlType="submit">
-          Submit
+          Submit Project
         </Button>
       </Form.Item>
     </Form>
