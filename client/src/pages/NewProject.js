@@ -26,11 +26,11 @@ const NewProject = () => {
           },
         ]}
       >
-        <Input size="large" placeholder='Enter title here'/>
+        <Input size="large" placeholder='Enter title here'style={{ width: '70%'}}/>
       </Form.Item>
       
       <Form.Item name={['project', 'description']} label="Project Description">
-        <Input.TextArea />
+        <Input.TextArea placeholder='Describe your project' autoSize={{ minRows: 5, maxRows: 20}} style={{ width: '70%'}}/>
       </Form.Item>
 
       <Form.Item
