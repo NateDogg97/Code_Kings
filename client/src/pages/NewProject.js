@@ -10,7 +10,7 @@ const layout = {
 };
 
 
-const App = () => {
+const NewProject = () => {
   const onFinish = (values) => {
     console.log(values);
   };
@@ -70,5 +70,5 @@ const App = () => {
     </Form>
   );
 };
-export default App;
-Username
+export default NewProject;
+
