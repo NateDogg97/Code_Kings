@@ -19,7 +19,16 @@ const Profile = () => {
 
   return (
     <Layout>
-      <Sider trigger={null} collapsible collapsed={collapsed}>
+      <Sider
+        breakpoint="lg"
+        collapsedWidth="0"
+        onBreakpoint={(broken) => {
+          console.log(broken);
+        }}
+        onCollapse={(collapsed, type) => {
+          console.log(collapsed, type);
+        }}
+      >
         <div className="logo" />
         <Menu
           theme="dark"
@@ -46,13 +55,6 @@ const Profile = () => {
       </Sider>
       <Layout className="site-layout">
         <Header className="site-layout-background" style={{ padding: 0 }}>
-          {React.createElement(
-            collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
-            {
-              className: "trigger",
-              onClick: () => setCollapsed(!collapsed),
-            }
-          )}
         </Header>
         <Content
           className="site-layout-background"
@@ -62,55 +64,53 @@ const Profile = () => {
             minHeight: 280,
           }}
         >
-        <div className="wrapper">
-          <div className="content-profile">
-            <div className="section">
-              <ProfileIcon/>
-            </div>
-            <div className="break">
-              <div className="section half">
-                <h2>Owner</h2>
-                <hr style={{border: "1px solid grey"}} />
-                <div className="break">
-                  <h4>My Open Projects</h4>
-                </div>
-                <div className="break">
-                  <h4>Pending Projects</h4>
-                </div>
+          <div className="wrapper">
+            <div className="content-profile">
+              <div className="section">
+                <ProfileIcon />
               </div>
-              <div className="section half">
-                <h2>Developer</h2>
-                <hr style={{border: "1px solid grey"}} />
-                <div className="break">
-                  <h4>Working On</h4>
-                </div>
-                <div className="break">
-                  <h4>Completed Projects</h4>
-                </div>
-              </div>
-            </div>
-            <div className="content">
               <div className="break">
                 <div className="section half">
-                  <h2>Recommended Projects</h2>
-                  <hr style={{border: "1px solid grey"}} />
+                  <h2>Owner</h2>
+                  <hr style={{ border: "1px solid grey" }} />
                   <div className="break">
-                    <ProjectCard />
+                    <h4>My Open Projects</h4>
                   </div>
-                  <div className="break"></div>
+                  <div className="break">
+                    <h4>Pending Projects</h4>
+                  </div>
                 </div>
                 <div className="section half">
-                  <h2>Calendar</h2>
-                  <hr style={{border: "1px solid grey"}} />
+                  <h2>Developer</h2>
+                  <hr style={{ border: "1px solid grey" }} />
                   <div className="break">
-                    {/* <Calendar /> */}
+                    <h4>Working On</h4>
                   </div>
-                  <div className="break"></div>
+                  <div className="break">
+                    <h4>Completed Projects</h4>
+                  </div>
+                </div>
+              </div>
+              <div className="content">
+                <div className="break">
+                  <div className="section half">
+                    <h2>Recommended Projects</h2>
+                    <hr style={{ border: "1px solid grey" }} />
+                    <div className="break">
+                      <ProjectCard />
+                    </div>
+                    <div className="break"></div>
+                  </div>
+                  <div className="section half">
+                    <h2>Calendar</h2>
+                    <hr style={{ border: "1px solid grey" }} />
+                    <div className="break">{/* <Calendar /> */}</div>
+                    <div className="break"></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
         </Content>
       </Layout>
     </Layout>
