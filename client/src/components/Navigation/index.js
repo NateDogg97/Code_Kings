@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { Menu, Button } from 'antd';
+import Auth from '../../utils/auth';
+
 import './style.css';
+
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
 
   const items = [
     {
@@ -9,13 +16,6 @@ import './style.css';
                Login
              </Link>,
       key: 'login',
-      type: 'loggedOut'
-    },
-    {
-      label: <Link to="/signup">
-               Signup
-             </Link>,
-      key: 'signup',
       type: 'loggedOut'
     },
     {
@@ -37,7 +37,7 @@ import './style.css';
           key: 'settings'
         },
         {
-          label: <Button type="link">Logout</Button>,
+          label: <Button type="link" onClick={logout}>Logout</Button>,
           key: 'logout-btn',
         }
       ],
@@ -46,13 +46,21 @@ import './style.css';
   ];
 
 const Nav = () => {
+
   const [current, setCurrent] = useState();
   const onClick = (e) => {
     console.log('click ', e);
     setCurrent(e.key);
   };
 
-  return <Menu mode="horizontal" onClick={onClick} items={items} current={[current]}/>
+  return (
+    <Menu 
+      mode="horizontal" 
+      onClick={onClick}
+      items={items} 
+      current={[current]}
+    />
+    )
 }
 
 export default Nav;
