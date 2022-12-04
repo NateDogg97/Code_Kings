@@ -19,8 +19,8 @@ const resolvers = {
           projects: async () => {
             return await Project.find();
           },
-          project: async (parent, args) => {
-            return await Project.findOne({id: args._id})
+          project: async (parent, { projectId }) => {
+            return await Project.findOne({_id: projectId})
              .populate('developers')
              .populate('owner');
           },
