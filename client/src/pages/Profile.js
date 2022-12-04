@@ -95,19 +95,6 @@ const Profile = () => {
                   </div>
                 </div>
               </div>
-              <div className="content">
-                <div>
-                  <div >
-                    <h2>Recommended Projects</h2>
-                    <hr style={{ border: "1px solid grey" }} />
-                    <div>
-                      <ProjectCard />
-                    </div>
-                    <div className="break"></div>
-                  </div>
-                 
-                </div>
-              </div>
             </div>
           </div>
         </Content>
