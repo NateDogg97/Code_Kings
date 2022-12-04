@@ -12,7 +12,7 @@ query getProjects {
 }
 `;
 
-export const QUERY_PROJECT = gql`
+export const QUERY_SINGLE_PROJECT = gql`
 query getProject($id: ID!) {
   project(_id: $id) {
     _id
@@ -20,6 +20,14 @@ query getProject($id: ID!) {
     description
     open
     price
+    owner {
+      firstName
+      lastName
+    }
+    developers {
+      firstName
+      lastName
+    }
   }
 }
 `;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
-import { QUERY_PROJECTS } from '../utils/queries';
+import { QUERY_SINGLE_PROJECT } from '../utils/queries';
 import { UploadOutlined } from '@ant-design/icons';
 import { Card, Space, Layout, Button, Empty, message, Upload} from 'antd';
 import Icon from '../components/ProfileIcon';
@@ -28,6 +28,13 @@ const props = {
 
 const App = () => {
 
+  const { id } = useParams();
+  const { data } = useQuery(QUERY_SINGLE_PROJECT, {
+    variables: { id: id }
+  });
+  console.log(data);
+  const project = data?.project || {};
+
   const [loadings, setLoadings] = useState([]);
   const enterLoading = (index) => {
     setLoadings((prevLoadings) => {
@@ -43,21 +50,6 @@ const App = () => {
       });
     }, 6000);
   };
-
-  const { _id: userParam } = useParams();
-  const { loading, data } = useQuery(QUERY_PROJECTS, {
-    variables: { _id: userParam }
-  });
-
-  let project;
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (data) {
-    project = data.projects;
-  }
 
   return (
     <Layout>
@@ -95,10 +87,11 @@ const App = () => {
               <p>{project.owner}</p>
             </Card>
             <Card title="Developers" className='developers-projCard'>
-              {project.map((developer) => {
-                <p>{developer.firstName} {developer.lastName}</p>
-              })}
-              
+              {project.developers ? (
+                <p>{project.developers.firstName} {project.developers.lastName}</p>
+              ) : (
+                <p>This project has not been claimed by any developers</p>
+              )}
             </Card>
           </div>
           <div className='row-3'>
