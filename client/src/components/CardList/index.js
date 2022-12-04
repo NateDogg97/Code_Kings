@@ -26,7 +26,7 @@ const CardList = ({
   >
     <PushpinFilled style={{color:'red',fontSize:'24px'}} />
     <Meta
-      title={<Link to="/project">
+      title={<Link to={`/projects/${project._id}`}>
               {project.name}
             </Link>}
     />
