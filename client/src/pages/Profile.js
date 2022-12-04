@@ -10,7 +10,6 @@ import {
   MenuUnfoldOutlined,
   ProjectOutlined,
   HomeOutlined,
-  CalendarOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 
@@ -54,11 +53,6 @@ const Profile = () => {
               icon: <HomeOutlined />,
               label: "Home",
             },
-            {
-              key: "3",
-              icon: <CalendarOutlined />,
-              label: "Calendar",
-            },
           ]}
         />
       </Sider>
@@ -75,10 +69,11 @@ const Profile = () => {
         >
           <div className="wrapper">
             <div className="content-profile">
-              <div className="section">
+              <div style={{textAlign:"center",marginBottom:'25px',fontWeight:"bolder", fontSize:"24px"}}>
                 <ProfileIcon />
+                Username
               </div>
-              <div className="break">
+              <div>
                 <div className="section half">
                   <h2>Owner</h2>
                   <hr style={{ border: "1px solid grey" }} />
@@ -101,21 +96,16 @@ const Profile = () => {
                 </div>
               </div>
               <div className="content">
-                <div className="break">
-                  <div className="section half">
+                <div>
+                  <div >
                     <h2>Recommended Projects</h2>
                     <hr style={{ border: "1px solid grey" }} />
-                    <div className="break">
+                    <div>
                       <ProjectCard />
                     </div>
                     <div className="break"></div>
                   </div>
-                  <div className="section half">
-                    <h2>Calendar</h2>
-                    <hr style={{ border: "1px solid grey" }} />
-                    <div className="break">{/* <Calendar /> */}</div>
-                    <div className="break"></div>
-                  </div>
+                 
                 </div>
               </div>
             </div>
