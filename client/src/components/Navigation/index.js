@@ -19,17 +19,30 @@ import './style.css';
       type: 'loggedOut'
     },
     {
-      label: <Link to="/profile">
-              Profile
-              </Link>,
-      key: 'my-profile',
+      label: 'Profile',
+      key: 'SubMenu',
+      children: [
+        {
+          label: <Link to="/profile">
+                  My Profile
+                 </Link>,
+          key: 'my-profile'
+        },
+        {
+          label: 'Developing',
+          key: 'developing'
+        },
+        {
+          label: 'Settings',
+          key: 'settings'
+        },
+        {
+          label: <Button type="link">Logout</Button>,
+          key: 'logout-btn',
+        }
+      ],
       type: 'loggedIn'
     },
-    {
-      label: <Button type="link">Logout</Button>,
-      key: 'logout-btn',
-      type:'loggedIn'
-    }
   ];
 
 const Nav = () => {
