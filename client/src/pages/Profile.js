@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import "../index.css";
 import ProfileIcon from "../components/ProfileIcon";
 import ProjectCard from "../components/ProjectCard";
-// import Calendar from "../components/Calendar";
-// import QUERY_USER from '../utils/queries';
+import { QUERY_USER, QUERY_ME } from '../utils/queries';
+import Auth from '../utils/auth';
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -17,14 +18,6 @@ const { Header, Sider, Content } = Layout;
 
 const Profile = () => {
   const [collapsed, setCollapsed] = useState(false);
-
-  // const { data } = useQuery(QUERY_USER);
-  // let user;
-
-  // if (data) {
-  //   user = data.user;
-  // }
-
   return (
     <Layout>
       <Sider
