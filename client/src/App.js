@@ -74,7 +74,7 @@ function App() {
                 element={<Profile />}
               />
               <Route 
-                path="/profiles/:username"
+                path="/profiles/:profileId"
                 element={<Profile />}
               />
               <Route 
@@ -82,7 +82,7 @@ function App() {
                 element={<NewProject />}
                 />
               <Route 
-                path="/projects/:id"
+                path="/projects/:projectId"
                 element={<Project />}
               />
             </Routes>

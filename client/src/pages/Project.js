@@ -28,9 +28,9 @@ const props = {
 
 const App = () => {
 
-  const { id } = useParams();
+  const { projectId } = useParams();
   const { data } = useQuery(QUERY_SINGLE_PROJECT, {
-    variables: { id: id }
+    variables: { projectId: projectId }
   });
   console.log(data);
   const project = data?.project || {};
@@ -78,8 +78,8 @@ const App = () => {
           }}
           >
           <div className='row-1'>
-            <Card title="Card" className='title-projCard'>
-              <p>{project.title}</p>
+            <Card title={project.name} className='title-projCard'>
+
             </Card>
           </div>
           <div className='row-2'>
