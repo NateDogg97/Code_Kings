@@ -32,7 +32,6 @@ const App = () => {
   const { data } = useQuery(QUERY_SINGLE_PROJECT, {
     variables: { projectId: projectId }
   });
-  console.log(data);
   const project = data?.project || {};
 
   const [loadings, setLoadings] = useState([]);
