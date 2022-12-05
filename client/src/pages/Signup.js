@@ -86,7 +86,6 @@ const Signup = () => {
                 label="First Name"
                 rules={[
                     {
-                        type: 'array',
                         required: true,
                         message: 'Please enter your first name!',
                     },
@@ -100,7 +99,6 @@ const Signup = () => {
                 label="Last Name"
                 rules={[
                     {
-                        type: 'array',
                         required: true,
                         message: 'Please enter your last name!',
                     },
