@@ -10,6 +10,7 @@ function Home() {
     <Layout className="mainLayout">
       <Sider
         breakpoint="lg"
+        style={{backgroundColor:'transparent'}}
         collapsedWidth="0"
         onBreakpoint={(broken) => {
           console.log(broken);
@@ -19,8 +20,7 @@ function Home() {
         }}
       >
         <div className="icon-projPage">
-          <ProfileIcon />
-          <Button className="create-new-proj" type="primary">
+          <Button className="create-new-proj" type="primary" style={{backgroundColor:'navy',color:'white'}}>
             Create A Project
           </Button>
         </div>
