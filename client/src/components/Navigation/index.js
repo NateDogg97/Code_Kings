@@ -10,14 +10,7 @@ import './style.css';
     Auth.logout();
   };
 
-  const items = [
-    {
-      label: <Link to='/login'>
-               Login
-             </Link>,
-      key: 'login',
-      type: 'loggedOut'
-    },
+  const loggedInItems = [
     {
       label: 'Profile',
       key: 'SubMenu',
@@ -27,10 +20,6 @@ import './style.css';
                   My Profile
                  </Link>,
           key: 'my-profile'
-        },
-        {
-          label: 'Developing',
-          key: 'developing'
         },
         {
           label: 'Settings',
@@ -45,6 +34,16 @@ import './style.css';
     },
   ];
 
+  const loggedOutItems = [
+    {
+      label: <Link to='/login'>
+               Login
+             </Link>,
+      key: 'login',
+      type: 'loggedOut'
+    }
+  ];
+
 const Nav = () => {
 
   const [current, setCurrent] = useState();
@@ -52,14 +51,29 @@ const Nav = () => {
     console.log('click ', e);
     setCurrent(e.key);
   };
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
 
   return (
+    <div>
+    {Auth.loggedIn() ? (
     <Menu 
       mode="horizontal" 
       onClick={onClick}
-      items={items} 
+      items={loggedInItems} 
       current={[current]}
     />
+    ) : (
+      <Menu 
+      mode="horizontal" 
+      onClick={onClick}
+      items={loggedOutItems} 
+      current={[current]}
+    />
+    )}
+    </div>
     )
 }
 
