@@ -18,6 +18,25 @@ const { Header, Sider, Content } = Layout;
 
 const Profile = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const { _id: userParam } = useParams();
+  const { data } = useQuery(QUERY_ME, {
+    variables: { _id: userParam },
+  });
+
+  const me = data?.me || {}
+
+  if (Auth.loggedIn() && Auth.getProfile().data._id === userParam) {
+    return <Navigate to="/me" />;
+  }
+
+  if (!me?._id) {
+    return (
+      <h4>
+        Login or create an account first
+      </h4>
+    );
+  }
+
   return (
     <Layout>
       <Sider
@@ -64,27 +83,23 @@ const Profile = () => {
             <div className="content-profile">
               <div style={{textAlign:"center",marginBottom:'25px',fontWeight:"bolder", fontSize:"24px"}}>
                 <ProfileIcon />
-                Username
+                {me.firstName} {me.lastName}
               </div>
               <div>
                 <div className="section half">
-                  <h2>Owner</h2>
+                  <h2>Created Projects</h2>
                   <hr style={{ border: "1px solid grey" }} />
-                  <div className="break">
-                    <h4>My Open Projects</h4>
-                  </div>
-                  <div className="break">
-                    <h4>Pending Projects</h4>
-                  </div>
+                  {me.createdProjects.map((project) => (
+                    project.name
+                  ))}
                 </div>
                 <div className="section half">
-                  <h2>Developer</h2>
+                  <h2>Developer Projects</h2>
                   <hr style={{ border: "1px solid grey" }} />
                   <div className="break">
-                    <h4>Working On</h4>
-                  </div>
-                  <div className="break">
-                    <h4>Completed Projects</h4>
+                  {me.developingProjects.map((project) => (
+                    project.name
+                  ))}
                   </div>
                 </div>
               </div>
