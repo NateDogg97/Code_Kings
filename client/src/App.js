@@ -17,7 +17,7 @@ import Project from './pages/Project';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-// import ScrollToTop from './utils/ScrollToTop';
+import ScrollToTop from './utils/ScrollToTop';
 
 import './index.css';
 
@@ -49,10 +49,10 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+        <ScrollToTop />
           <Header />
           <div className="content">
             <Routes>
-            {/* <ScrollToTop /> */}
               <Route 
                 path="/"
                 element={<Home />}
