@@ -94,6 +94,10 @@ const resolvers = {
             const token = signToken(user);
       
             return { token, user };
+        },
+        addProject: async (parent, args) => {
+          const project = await Project.create(args);
+          return project;
         }
         //Need mutations for update open/claimed projects for User and
         //"developer" for project?
