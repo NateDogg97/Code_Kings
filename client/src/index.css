@@ -1,0 +1,119 @@
+.content-profile {
+  width: 100%;
+}
+
+body {
+  margin: 0px;
+}
+
+.row-2, .row-4 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.row-2 > .ant-card,
+.row-4 > .ant-card
+ {
+  width: 50%;
+}
+
+.icon-projPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  padding: 16px;
+}
+
+.price-projCard,
+.claim-projCard,
+.delete-projCard,
+.create-new-proj {
+  margin: 16px;
+  width: 100%;
+}
+
+.create-new-proj{
+  height: 50px;
+  background-color: aquamarine;
+  color: black;
+}
+
+.ant-btn-primary.create-new-proj:hover,
+.ant-btn-primary.create-new-proj:active
+ {
+  background-color: rgba(127, 255, 212, 0.701);
+  color: rgba(0, 0, 0, 0.737);
+}
+
+.trigger {
+  padding: 0 24px;
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+.logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  margin-top: -10px;
+  margin-left: -10px;
+  align-items: stretch;
+}
+.content-profile {
+  width: 100%;
+  padding: 20px;
+  min-height: 100vh;
+}
+.content-profile h1 {
+  text-align: left;
+  margin: 1rem;
+}
+.content-profile .section {
+  border: 1px solid grey;
+  padding: 32px;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+}
+.content-profile .break {
+  display: flex;
+}
+.section {
+    border-radius: 6px;
+}
+
+.oneHalf {
+  flex-basis: 50%;
+  max-width: 50%;
+}
+.divide {
+  margin: 16px;
+  border-left: 1px solid grey;
+}
+.hr {
+  border: 1px solid grey;
+  width: 100%;
+}
+p {
+  color: #999999;
+  text-align: center;
+}
