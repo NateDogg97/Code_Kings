@@ -22,7 +22,7 @@ const NewProject = () => {
         label="Project Title"
         rules={[
           {
-            type: 'array',
+            type: 'string',
           },
         ]}
       >

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate, useParams } from 'react-router-dom';
+import { Navigate, useParams, Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import "../index.css";
 import ProfileIcon from "../components/ProfileIcon";
@@ -58,7 +58,7 @@ const Profile = () => {
             {
               key: "1",
               icon: <ProjectOutlined />,
-              label: "Create A Project",
+              label: <Link to="/newproject">Create a Project</Link>,
             },
             {
               key: "2",
