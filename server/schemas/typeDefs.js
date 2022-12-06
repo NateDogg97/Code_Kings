@@ -61,10 +61,10 @@ const typeDefs = gql`
             _id: ID!
         ): Auth
         addProject(
-            name: String
-            description: String
-            price: String
-        ): User
+            name: String!,
+            description: String!,
+            price: Float!
+        ): Project
     }
 `;
 
