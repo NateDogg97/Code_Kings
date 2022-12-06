@@ -12,12 +12,6 @@ function Home() {
         breakpoint="lg"
         style={{backgroundColor:'transparent'}}
         collapsedWidth="0"
-        onBreakpoint={(broken) => {
-          console.log(broken);
-        }}
-        onCollapse={(collapsed, type) => {
-          console.log(collapsed, type);
-        }}
       >
         <div className="icon-projPage">
           <Button className="create-new-proj" type="primary" style={{backgroundColor:'navy',color:'white'}}>
