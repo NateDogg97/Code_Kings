@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { ADD_PROJECT } from '../utils/mutations';
+import Auth from '../utils/auth';
 import { Button, Form, Input, InputNumber } from 'antd';
 const layout = {
   labelCol: {
@@ -10,10 +13,32 @@ const layout = {
 };
 
 
-const NewProject = () => {
-  const onFinish = (values) => {
-    console.log(values);
-  };
+const NewProject = () => { 
+    const [addProject, {loading}] = useMutation(ADD_PROJECT, {errorPolicy: 'all'});
+    const [data, setData] = useState('');
+    const [error, setError] = useState('');
+
+    const handleFormSubmit = async (values) => {
+        try {
+            const { data } = addProject({
+                variables: {
+                    ...values
+                },
+            })
+            Auth.addProject(data.login.token);
+            setData(data);
+            console.log(data);
+        }
+        catch (err) {
+            setError(err);
+        }
+    }
+if (loading) return <p>Loading...</p>;
+if (error) return <p>Error :</p>;
+
+const onFinish = values => {
+    handleFormSubmit(values);
+};
   return (
     <Form {...layout} name="nest-messages" onFinish={onFinish}>
       
@@ -22,7 +47,7 @@ const NewProject = () => {
         label="Project Title"
         rules={[
           {
-            type: 'array',
+            type: 'string',
           },
         ]}
       >

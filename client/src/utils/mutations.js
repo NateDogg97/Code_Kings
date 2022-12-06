@@ -16,7 +16,7 @@ export const ADD_PROJECT = gql`
     $owner: ID!
     $name: String!
     $description: String!
-    $price: String!
+    $price: INT!
   ) {
     addProject(owner: $owner) {
       name
