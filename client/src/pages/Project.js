@@ -53,7 +53,15 @@ const App = () => {
 
   return (
     <Layout>
-      <Sider>
+      <Sider        breakpoint="lg"
+        collapsedWidth="0"
+        onBreakpoint={(broken) => {
+          console.log(broken);
+        }}
+        onCollapse={(collapsed, type) => {
+          console.log(collapsed, type);
+        }}
+      >
         <div className='icon-projPage'>
           <Icon/>
           <Card className='price-projCard' title='Price' size='small'>
@@ -116,7 +124,15 @@ const App = () => {
           </div>
         </Space>
       </Content>
-      <Sider>Sider</Sider>
+      <Sider         breakpoint="lg"
+        collapsedWidth="0"
+        onBreakpoint={(broken) => {
+          console.log(broken);
+        }}
+        onCollapse={(collapsed, type) => {
+          console.log(collapsed, type);
+        }}
+      >Sider</Sider>
     </Layout>
   )
 };
