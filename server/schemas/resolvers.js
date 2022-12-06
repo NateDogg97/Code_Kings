@@ -97,11 +97,16 @@ const resolvers = {
         },
         updateProject: async (parent, {id, open}, context)  => {
           if (context.user) {
-            return await Project.findByIdAndUpdate(id, args, {});
+            return await Project.findByIdAndUpdate(
+              id, 
+              {
+                open: !this.open
+              }, 
+              {new:true});
         }
         },
-        deleteProject: async (parent, args, context)  => {
-
+        deleteProject: async (parent, {id})  => {
+          return await Project.findByIdAndDelete(id)
         }
     }
 }

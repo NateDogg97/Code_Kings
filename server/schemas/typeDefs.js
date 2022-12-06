@@ -55,6 +55,12 @@ const typeDefs = gql`
             email: String!
             password: String!
         ): Auth
+        updateProject(
+            open: Boolean
+        ): Auth
+        deleteProject(
+            id: ID!
+        ): Auth
     }
 `;
 //add mutations once resolvers are finished
