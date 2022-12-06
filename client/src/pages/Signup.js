@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
-
-
+import { useNavigate } from 'react-router-dom';
 import {
     Button,
     Form,
@@ -37,6 +36,7 @@ const Signup = () => {
     const [addUser, {loading}] = useMutation(ADD_USER, {errorPolicy: 'all'});
     const [data, setData] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleFormSubmit = async (values) => {
         try {
@@ -57,6 +57,7 @@ if (error) return <p>Error :</p>;
 
 const onFinish = values => {
     handleFormSubmit(values);
+    navigate('/login');
 };
 
     return (
