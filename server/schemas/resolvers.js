@@ -95,18 +95,18 @@ const resolvers = {
       
             return { token, user };
         },
-        updateProject: async (parent, {id}, context)  => {
+        updateProject: async (parent, {_id}, context)  => {
           if (context.user) {
             return await Project.findByIdAndUpdate(
-              projectId, 
-              {
+              _id, 
+              {$set:{
                 open: false,
                 developer: context.user
-              }, 
+              }}, 
               {new:true});
         }
         },
-        deleteProject: async (parent, {id})  => {
+        deleteProject: async (parent, {_id})  => {
           return await Project.findByIdAndDelete(id)
         }
     }

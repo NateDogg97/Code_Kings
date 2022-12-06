@@ -55,10 +55,10 @@ const typeDefs = gql`
             password: String!
         ): Auth
         updateProject(
-            id: ID!
+            _id: ID!
         ): Auth
         deleteProject(
-            id: ID!
+            _id: ID!
         ): Auth
     }
 `;
