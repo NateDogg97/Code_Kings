@@ -43,28 +43,36 @@ const onFinish = values => {
     <Form {...layout} name="nest-messages" onFinish={onFinish}>
       
       <Form.Item
-        name={['project', 'name']}
+        name='name'
         label="Project Title"
         rules={[
           {
-            type: 'string',
+            required: true,
+            message: 'Please enter a title!',
           },
         ]}
       >
         <Input size="large" placeholder='Enter title here'style={{ width: '70%'}}/>
       </Form.Item>
       
-      <Form.Item name={['project', 'description']} label="Project Description">
+      <Form.Item name='description' 
+      label="Project Description"
+      rules={[
+          {
+              required: true,
+              message: 'Please enter a description!',
+          },
+      ]}>
         <Input.TextArea placeholder='Describe your project' autoSize={{ minRows: 5, maxRows: 20}} style={{ width: '70%'}}/>
       </Form.Item>
 
       <Form.Item
-        name={['project', 'price']}
+        name='price'
         label="Set your bounty"
         rules={[
           {
-            type: 'number',
-            min: 1,
+            required: true,
+            message: 'Please set a bounty!',
           },
         ]}
       >
