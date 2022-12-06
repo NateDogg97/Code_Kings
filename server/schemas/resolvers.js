@@ -57,7 +57,13 @@ const resolvers = {
             });
       
           return { session: session.id };
-          }
+          },
+          me: async (parent, args, context) => {
+            if (context.user) {
+              return User.findOne({ _id: context.user._id }).populate('createdProjects').populate('developingProjects');
+            }
+            throw new AuthenticationError('You need to be logged in!');
+          },
       },
     Mutation: {
         addUser: async (parent, args) => {

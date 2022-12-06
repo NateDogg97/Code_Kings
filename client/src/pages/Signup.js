@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-// import { Link } from "react-router-dom";
-// import { useMutation } from '@apollo/client';
-// import Auth from '../utils/auth';
-// import { addUser } from '../../../server/schemas/resolvers';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
 import {
     Button,
     Form,
@@ -10,23 +8,10 @@ import {
 } from 'antd';
 
 const formItemLayout = {
-    labelCol: {
-        xs: {
-            span: 24,
-        },
-        sm: {
-            span: 8,
-        },
-    },
-    wrapperCol: {
-        xs: {
-            span: 24,
-        },
-        sm: {
-            span: 16,
-        },
-    },
-};
+    labelCol: { xs: { span: 24 }, sm: { span: 12 }, md: { span: 8 }, lg: { span: 8 } },
+    wrapperCol: { xs: { span: 24 }, sm: { span: 12 }, md: { span: 12 }, lg: { span: 12 } }
+}
+
 const tailFormItemLayout = {
     wrapperCol: {
         xs: {
@@ -39,45 +24,39 @@ const tailFormItemLayout = {
         },
     },
 };
-const Signup = () => {
-  const [form] = Form.useForm();
-  const onSubmit = async (values) => {
-    console.log('Received values of form: ', values);
-  };
 
-// const Signup = () => {
-//     const [form] = Form.useForm();
-//     const [formState, setFormState] = useState({ email: '', password: '' });
-    // const [addUser] = useMutation(ADD_USER);
 
-    // const handleFormSubmit = async (event) => {
-    //     event.preventDefault();
-    //     //   const mutationResponse = await addUser({
-    //     //     variables: {
-    //     //       email: formState.email,
-    //     //       password: formState.password,
-    //     //       firstName: formState.firstName,
-    //     //       lastName: formState.lastName,
-    //     //     },
-    //     //   });
-    //     //   const token = mutationResponse.data.addUser.token;
-    //     //   Auth.login(token);
-    // };
+const Signup = () => { 
+    const [addUser, {loading}] = useMutation(ADD_USER, {errorPolicy: 'all'});
+    const [data, setData] = useState('');
+    const [error, setError] = useState('');
 
-    // const handleChange = (event) => {
-    //     const { name, value } = event.target;
-    //     setFormState({
-    //         ...formState,
-    //         [name]: value,
-    //     });
-    // };
+    const handleFormSubmit = async (values) => {
+        try {
+            const { data } = addUser({
+                variables: {
+                    ...values
+                },
+            })
+            setData(data);
+            console.log(data);
+        }
+        catch (err) {
+            setError(err);
+        }
+    }
+if (loading) return <p>Loading...</p>;
+if (error) return <p>Error :</p>;
+
+const onFinish = values => {
+    handleFormSubmit(values);
+};
 
     return (
         <Form
             {...formItemLayout}
-            form={form}
             name="register"
-            onSubmit={onSubmit}
+            onFinish={onFinish}
             scrollToFirstError
         >
 
@@ -86,11 +65,11 @@ const Signup = () => {
                 label="First Name"
                 rules={[
                     {
-                        type: 'array',
                         required: true,
                         message: 'Please enter your first name!',
                     },
                 ]}
+
             >
                 <Input style={{ width: '70%' }}/>
             </Form.Item>
@@ -100,11 +79,11 @@ const Signup = () => {
                 label="Last Name"
                 rules={[
                     {
-                        type: 'array',
                         required: true,
                         message: 'Please enter your last name!',
                     },
                 ]}
+
             >
                 <Input style={{ width: '70%' }}/>
             </Form.Item>
@@ -122,6 +101,7 @@ const Signup = () => {
                         message: 'Please input your E-mail!',
                     },
                 ]}
+
             >
                 <Input style={{ width: '70%' }}/>
             </Form.Item>
@@ -136,8 +116,9 @@ const Signup = () => {
                     },
                 ]}
                 hasFeedback
+
             >
-                <Input.Password style={{ width: '70%' }}/>
+                <Input.Password style={{ width: '70%' }} />
             </Form.Item>
 
             <Form.Item
@@ -160,11 +141,11 @@ const Signup = () => {
                     }),
                 ]}
             >
-                <Input.Password style={{ width: '70%' }}/>
+                <Input.Password style={{ width: '70%' }} />
             </Form.Item>
 
             <Form.Item {...tailFormItemLayout}>
-                <Button type="primary" htmlType="submit" className='login-form-button'>
+                <Button type="primary" htmlType="submit" className='signup-form-button'>
                     Register
                 </Button>
             </Form.Item>

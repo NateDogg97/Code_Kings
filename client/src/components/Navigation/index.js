@@ -16,7 +16,7 @@ import './style.css';
       key: 'SubMenu',
       children: [
         {
-          label: <Link to="/profiles/:profileId">
+          label: <Link to="/me">
                   My Profile
                  </Link>,
           key: 'my-profile'
