@@ -12,22 +12,13 @@ import {
 
 const formItemLayout = {
     labelCol: {
-        xs: {
-            span: 24,
-        },
-        sm: {
-            span: 8,
-        },
-    },
-    wrapperCol: {
-        xs: {
-            span: 24,
-        },
-        sm: {
-            span: 16,
-        },
-    },
-};
+        span: 8,
+      },
+      wrapperCol: {
+        span: 16,
+      },
+}
+
 const tailFormItemLayout = {
     wrapperCol: {
         xs: {

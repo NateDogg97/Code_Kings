@@ -16,7 +16,7 @@ import './style.css';
       key: 'SubMenu',
       children: [
         {
-          label: <Link to="/profiles/:profileId">
+          label: <Link to="/me">
                   My Profile
                  </Link>,
           key: 'my-profile'
@@ -30,7 +30,7 @@ import './style.css';
           key: 'logout-btn',
         }
       ],
-      type: 'loggedIn'
+      // type: 'loggedIn'
     },
   ];
 
@@ -40,7 +40,7 @@ import './style.css';
                Login
              </Link>,
       key: 'login',
-      type: 'loggedOut'
+      // type: 'loggedOut'
     }
   ];
 
@@ -48,12 +48,7 @@ const Nav = () => {
 
   const [current, setCurrent] = useState();
   const onClick = (e) => {
-    console.log('click ', e);
     setCurrent(e.key);
-  };
-  const logout = (event) => {
-    event.preventDefault();
-    Auth.logout();
   };
 
   return (
