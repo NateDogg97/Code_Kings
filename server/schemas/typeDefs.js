@@ -22,7 +22,6 @@ const typeDefs = gql`
         price: Float
         owner: User
         developers: User
-
     }
 
     type Auth {
@@ -56,6 +55,7 @@ const typeDefs = gql`
             password: String!
         ): Auth
         updateProject(
+            
             open: Boolean
         ): Auth
         deleteProject(

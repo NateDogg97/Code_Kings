@@ -95,12 +95,13 @@ const resolvers = {
       
             return { token, user };
         },
-        updateProject: async (parent, {id, open}, context)  => {
+        updateProject: async (parent, {projectId}, context)  => {
           if (context.user) {
             return await Project.findByIdAndUpdate(
-              id, 
+              projectId, 
               {
-                open: !this.open
+                open: false,
+                developer: context.User
               }, 
               {new:true});
         }
