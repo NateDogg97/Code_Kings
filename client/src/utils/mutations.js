@@ -12,24 +12,15 @@ export const LOGIN = gql`
 `;
 
 export const ADD_PROJECT = gql`
-  mutation addProject(
-    $owner: ID!
-    $name: String!
-    $description: String!
-    $price: String!
-  ) {
-    addProject(owner: $owner) {
-      name
-      description
-      price
-      owner {
-        _id
-        firstName
-        lastName
-        email
-      }
-    }
+mutation addProject($name: String!, $description: String!, $price: Float!) {
+  addProject(name: $name, description: $description, price: $price) {
+    name
+    _id
+    description
+    open
+    price
   }
+}
 `;
 
 export const ADD_USER = gql`
