@@ -94,9 +94,15 @@ const resolvers = {
             const token = signToken(user);
       
             return { token, user };
+        },
+        updateProject: async (parent, {id, open}, context)  => {
+          if (context.user) {
+            return await Project.findByIdAndUpdate(id, args, {});
         }
-        //Need mutations for update open/claimed projects for User and
-        //"developer" for project?
+        },
+        deleteProject: async (parent, args, context)  => {
+
+        }
     }
 }
 
