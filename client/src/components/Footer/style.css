@@ -43,7 +43,7 @@
   }
   
   .footer .col ul li:hover {
-    color: #ffffff;
+    color: #000000;
     transition: .1s;
     -webkit-transition: .2s;
     -moz-transition: .2s;
