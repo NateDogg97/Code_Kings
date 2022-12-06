@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
+
+
 import {
     Button,
     Form,
     Input,
 } from 'antd';
+
 
 const formItemLayout = {
     labelCol: {
@@ -153,7 +156,7 @@ const onFinish = values => {
                     Register
                 </Button>
             </Form.Item>
-        </Form>
+        </Form>   
     );
 };
 export default Signup;

@@ -109,6 +109,10 @@ const resolvers = {
         deleteProject: async (parent, {_id})  => {
           return await Project.findByIdAndDelete(id)
         }
+        addProject: async (parent, args) => {
+          const project = await Project.create(args);
+          return project;
+        }
     }
 }
 

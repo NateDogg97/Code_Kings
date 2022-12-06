@@ -60,8 +60,12 @@ const typeDefs = gql`
         deleteProject(
             _id: ID!
         ): Auth
+        addProject(
+            name: String
+            description: String
+            price: String
+        ): User
     }
 `;
-//add mutations once resolvers are finished
 
 module.exports = typeDefs;

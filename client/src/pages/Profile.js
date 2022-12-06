@@ -57,13 +57,13 @@ const Profile = () => {
           items={[
             {
               key: "1",
-              icon: <ProjectOutlined />,
-              label: <Link to="/newproject">Create a Project</Link>,
+              icon: <HomeOutlined />,
+              label: "Home",
             },
             {
               key: "2",
-              icon: <HomeOutlined />,
-              label: "Home",
+              icon: <ProjectOutlined />,
+              label: <Link to="/newproject">Create a Project</Link>,
             },
           ]}
         />

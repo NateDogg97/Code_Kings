@@ -22,10 +22,6 @@ import './style.css';
           key: 'my-profile'
         },
         {
-          label: 'Settings',
-          key: 'settings'
-        },
-        {
           label: <Button type="link" onClick={logout}>Logout</Button>,
           key: 'logout-btn',
         }
