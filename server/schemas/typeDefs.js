@@ -55,8 +55,7 @@ const typeDefs = gql`
             password: String!
         ): Auth
         updateProject(
-            
-            open: Boolean
+            id: ID!
         ): Auth
         deleteProject(
             id: ID!
