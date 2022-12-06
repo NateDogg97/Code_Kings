@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_PROJECT } from '../utils/mutations';
-import Auth from '../utils/auth';
+// import Auth from '../utils/auth';
 import { Button, Form, Input, InputNumber } from 'antd';
 const layout = {
   labelCol: {
@@ -25,7 +25,7 @@ const NewProject = () => {
                     ...values
                 },
             })
-            Auth.addProject(data.login.token);
+            // Auth.addProject(data.login.token);
             setData(data);
             console.log(data);
         }
