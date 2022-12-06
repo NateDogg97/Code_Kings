@@ -17,6 +17,7 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
-    "antd": "^5.0.2"
+    "antd": "^5.0.2",
+    "async-validator": "^4.2.5"
   }
 }
