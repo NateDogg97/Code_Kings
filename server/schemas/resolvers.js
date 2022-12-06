@@ -109,8 +109,12 @@ const resolvers = {
         deleteProject: async (parent, {_id})  => {
           return await Project.findByIdAndDelete(id)
         },
-        addProject: async (parent, args) => {
+        addProject: async (parent, args, context) => {
           const project = await Project.create(args);
+          await User.findOneAndUpdate(
+            { _id: context.user._id },
+            { $addToSet: { createdProjects: project._id } }
+          );
           return project;
         }
     }
